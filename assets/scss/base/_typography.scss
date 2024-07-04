@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'AlibabaPuHuiTi';
+    src: url('../fonts/AlibabaPuHuiTi-2-45-Light.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TT';
+    src: url('../fonts/TT_Norms_Pro_Regular.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+body, div, li, p, span, text, ul {
+    font-family: TT;
+}
