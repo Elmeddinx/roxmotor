@@ -39,88 +39,91 @@ player.on("fullscreenchange", function () {
   }
 });
 
-var currentIndex = 0;
-const slides = document.querySelectorAll(".carousel1-item");
-const captions = document.querySelectorAll(".caption1");
-const captionsMb = document.querySelectorAll(".captions1-mb__pagination-item");
+// Section1
+function createCarousel(carouselId, itemClass, captionClass, captionMbClass, captionTitleClass, captionDescClass, captionHrClass, mbTitleClass, mbDescClass) {
+  let currentIndex = 0;
+  const carousel = document.getElementById(carouselId);
+  const slides = carousel.querySelectorAll(`.${itemClass}`);
+  const captions = carousel.querySelectorAll(`.${captionClass}`);
+  const captionsMb = carousel.querySelectorAll(`.${captionMbClass}`);
+  const activeCaptionMbTitle = carousel.querySelector(`.${mbTitleClass}`);
+  const activeCaptionMbDesc = carousel.querySelector(`.${mbDescClass}`);
 
-function showSlide(index) {
-  if (index >= slides.length) {
-    currentIndex = 0;
-  } else if (index < 0) {
-    currentIndex = slides.length - 1;
-  } else {
-    currentIndex = index;
+  function showSlide(index) {
+      if (index >= slides.length) {
+          currentIndex = 0;
+      } else if (index < 0) {
+          currentIndex = slides.length - 1;
+      } else {
+          currentIndex = index;
+      }
+
+      slides.forEach((slide) => slide.classList.remove("active"));
+      captionsMb.forEach((slide) => slide.classList.remove("active"));
+
+      slides[currentIndex].classList.add("active");
+      captionsMb[currentIndex].classList.add("active");
+
+      updateCaptions();
   }
 
-  slides.forEach((slide) => slide.classList.remove("active"));
-  captionsMb.forEach((slide) => slide.classList.remove("active"));
+  function updateCaptions() {
+      captions.forEach((caption) => {
+          const img = caption.querySelector("img");
+          const hr = caption.querySelector("hr");
+          if (img) {
+              img.style.display = "none";
+          }
+          if (hr) {
+              hr.style.backgroundColor = "#999";
+          }
+      });
 
-  slides[currentIndex].classList.add("active");
-  captionsMb[currentIndex].classList.add("active");
+      const activeCaptionImg = captions[currentIndex].querySelector("img");
+      const activeCaptionTitle = captions[currentIndex].querySelector(`.${captionTitleClass}`);
+      const activeCaptionDesc = captions[currentIndex].querySelector(`.${captionDescClass}`);
+      const activeCaptionHr = captions[currentIndex].querySelector(`.${captionHrClass}`);
 
-  // Update captions display
-
-  updateCaptions();
-}
-
-function updateCaptions() {
-  // Hide all caption images
-  captions.forEach((caption) => {
-    const img = caption.querySelector(".caption1-top img");
-    const hr = caption.querySelector(".caption1 hr");
-    if (img) {
-      img.style.display = "none";
-    }
-    if (hr) {
-      hr.style.backgroundColor = "#999";
-    }
-  });
-
-  const activeCaptionimg = captions[currentIndex].querySelector(".caption1-top img");
-  const activeCaptionTitle = captions[currentIndex].querySelector(".caption1-title");
-  const activeCaptionDesc = captions[currentIndex].querySelector(".caption1-desc");
-  const activeCaptionHr = captions[currentIndex].querySelector(".caption1 hr");
-  let activeCaptionMbTitle = document.querySelector(".captions1-mb__title");
-  let activeCaptionMbDesc = document.querySelector(".captions1-mb__desc");
-
-
-  if (activeCaptionimg) {
-    activeCaptionimg.style.display = "block";
+      if (activeCaptionImg) {
+          activeCaptionImg.style.display = "block";
+      }
+      if (activeCaptionHr) {
+          activeCaptionHr.style.backgroundColor = "#6e1013";
+      }
+      if (activeCaptionTitle && activeCaptionDesc) {
+          activeCaptionMbTitle.innerHTML = activeCaptionTitle.textContent;
+          activeCaptionMbDesc.innerHTML = activeCaptionDesc.textContent;
+      }
   }
-  if (activeCaptionHr) {
-    activeCaptionHr.style.backgroundColor = "#6e1013";
+
+  function startCarousel() {
+      setInterval(() => {
+          currentIndex++;
+          showSlide(currentIndex);
+      }, 3000);
   }
-  activeCaptionMbTitle.innerHTML = activeCaptionTitle.textContent;
-  activeCaptionMbDesc.innerHTML = activeCaptionDesc.textContent;
 
+  captions.forEach((caption, index) => {
+      caption.addEventListener("mouseover", () => {
+          showSlide(index);
+      });
+      caption.addEventListener("click", () => {
+          showSlide(index);
+      });
+  });
 
+  captionsMb.forEach((caption, index) => {
+      caption.addEventListener("mouseover", () => {
+          showSlide(index);
+      });
+      caption.addEventListener("click", () => {
+          showSlide(index);
+      });
+  });
+
+  showSlide(currentIndex);
+  startCarousel();
 }
 
-function startCarousel() {
-  setInterval(() => {
-    currentIndex++;
-    showSlide(currentIndex);
-  }, 3000); // Change slide every 3 seconds
-}
-
-captions.forEach((caption, index) => {
-  caption.addEventListener("mouseover", () => {
-    showSlide(index);
-  });
-  caption.addEventListener("click", () => {
-    showSlide(index);
-  });
-});
-
-captionsMb.forEach((caption, index) => {
-  caption.addEventListener("mouseover", () => {
-    showSlide(index);
-  });
-  caption.addEventListener("click", () => {
-    showSlide(index);
-  });
-});
-// Initialize the carousel
-showSlide(currentIndex);
-startCarousel();
+createCarousel('carousel1', 'carousel1-item', 'caption1', 'captions1-mb__pagination-item', 'caption1-title', 'caption1-desc', 'caption1 hr', 'captions1-mb__title', 'captions1-mb__desc');
+createCarousel('carousel2', 'carousel2-item', 'caption2', 'captions2-mb__pagination-item', 'caption2-title', 'caption2-desc', 'caption2 hr', 'captions2-mb__title', 'captions2-mb__desc');
