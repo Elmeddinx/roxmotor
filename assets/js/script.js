@@ -42,6 +42,7 @@ player.on("fullscreenchange", function () {
 // Section1
 function createCarousel(carouselId, itemClass, captionClass, captionMbClass, captionTitleClass, captionDescClass, captionHrClass, mbTitleClass, mbDescClass) {
   let currentIndex = 0;
+  let intervalId;
   const carousel = document.getElementById(carouselId);
   const slides = carousel.querySelectorAll(`.${itemClass}`);
   const captions = carousel.querySelectorAll(`.${captionClass}`);
@@ -97,15 +98,23 @@ function createCarousel(carouselId, itemClass, captionClass, captionMbClass, cap
   }
 
   function startCarousel() {
-      setInterval(() => {
+      intervalId = setInterval(() => {
           currentIndex++;
           showSlide(currentIndex);
       }, 3000);
   }
 
+  function stopCarousel() {
+      clearInterval(intervalId);
+  }
+
   captions.forEach((caption, index) => {
       caption.addEventListener("mouseover", () => {
+          stopCarousel();
           showSlide(index);
+      });
+      caption.addEventListener("mouseout", () => {
+          startCarousel();
       });
       caption.addEventListener("click", () => {
           showSlide(index);
@@ -114,7 +123,11 @@ function createCarousel(carouselId, itemClass, captionClass, captionMbClass, cap
 
   captionsMb.forEach((caption, index) => {
       caption.addEventListener("mouseover", () => {
+          stopCarousel();
           showSlide(index);
+      });
+      caption.addEventListener("mouseout", () => {
+          startCarousel();
       });
       caption.addEventListener("click", () => {
           showSlide(index);
@@ -127,3 +140,4 @@ function createCarousel(carouselId, itemClass, captionClass, captionMbClass, cap
 
 createCarousel('carousel1', 'carousel1-item', 'caption1', 'captions1-mb__pagination-item', 'caption1-title', 'caption1-desc', 'caption1 hr', 'captions1-mb__title', 'captions1-mb__desc');
 createCarousel('carousel2', 'carousel2-item', 'caption2', 'captions2-mb__pagination-item', 'caption2-title', 'caption2-desc', 'caption2 hr', 'captions2-mb__title', 'captions2-mb__desc');
+createCarousel('carousel3', 'carousel3-item', 'caption3', 'captions3-mb__pagination-item', 'caption3-title', 'caption3-desc', 'caption3 hr', 'captions3-mb__title', 'captions3-mb__desc');
