@@ -46,6 +46,7 @@
                 margin: 0 auto;
                 width: 100%;
                 padding: 25px;
+                height: calc(100% - 40px - 107vw);
             }
             .caption1 {
                 width: 33.333%;
@@ -56,7 +57,7 @@
                 margin: 0 5px;
 
                 @include mq(tablet-portrait-up) {
-                    color: #000;
+                    display: none;
                 }
                 &-top {
                     width: 100%;
@@ -106,15 +107,50 @@
                     }
                 }
             }
-        }
-        .captions1-mb {
-            display: none;
-            @include mq(tablet-portrait-up) {
-                display: flex;
-                flex-direction: column;
-            }
-            &__top {
-                
+            &-mb {
+                display: none;
+                @include mq(tablet-portrait-up) {
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    width: 100%;
+                }
+                &__top {
+                    min-height: 150px;
+                }
+                &__title {
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: 24px;
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+                &__desc {
+                    width: 100%;
+                    text-align: left;
+                    font-size: 16px;
+                    color: #50555b;
+                    height: auto;
+                    line-height: 24px;
+                    padding-top: 10px;
+                }
+                &__pagination {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    position: absolute;
+                    bottom: 0px;
+                    &-item {
+                        width: 35px;
+                        background-color: rgb(238, 238, 238);
+                        margin-right: 5px;
+                        height: 2.3px;
+                        cursor: pointer;
+                        &.active {
+                            background-color: rgb(104, 41, 41) !important;
+                        }
+                    }
+                }
             }
         }
     }

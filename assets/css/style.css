@@ -380,6 +380,7 @@ body {
     margin: 0 auto;
     width: 100%;
     padding: 25px;
+    height: calc(100% - 40px - 107vw);
   }
 }
 .section1 .carousel1 .captions1 .caption1 {
@@ -392,7 +393,7 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .section1 .carousel1 .captions1 .caption1 {
-    color: #000;
+    display: none;
   }
 }
 .section1 .carousel1 .captions1 .caption1-top {
@@ -456,5 +457,43 @@ body {
   .section1 .carousel1 .captions1-mb {
     display: flex;
     flex-direction: column;
+    position: relative;
+    width: 100%;
   }
+}
+.section1 .carousel1 .captions1-mb__top {
+  min-height: 150px;
+}
+.section1 .carousel1 .captions1-mb__title {
+  height: 30px;
+  line-height: 30px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.section1 .carousel1 .captions1-mb__desc {
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  color: #50555b;
+  height: auto;
+  line-height: 24px;
+  padding-top: 10px;
+}
+.section1 .carousel1 .captions1-mb__pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0px;
+}
+.section1 .carousel1 .captions1-mb__pagination-item {
+  width: 35px;
+  background-color: rgb(238, 238, 238);
+  margin-right: 5px;
+  height: 2.3px;
+  cursor: pointer;
+}
+.section1 .carousel1 .captions1-mb__pagination-item.active {
+  background-color: rgb(104, 41, 41) !important;
 }/*# sourceMappingURL=style.css.map */

@@ -39,9 +39,10 @@ player.on("fullscreenchange", function () {
   }
 });
 
-let currentIndex = 0;
+var currentIndex = 0;
 const slides = document.querySelectorAll(".carousel1-item");
 const captions = document.querySelectorAll(".caption1");
+const captionsMb = document.querySelectorAll(".captions1-mb__pagination-item");
 
 function showSlide(index) {
   if (index >= slides.length) {
@@ -53,7 +54,10 @@ function showSlide(index) {
   }
 
   slides.forEach((slide) => slide.classList.remove("active"));
+  captionsMb.forEach((slide) => slide.classList.remove("active"));
+
   slides[currentIndex].classList.add("active");
+  captionsMb[currentIndex].classList.add("active");
 
   // Update captions display
 
@@ -73,14 +77,24 @@ function updateCaptions() {
     }
   });
 
-  const activeCaption = captions[currentIndex].querySelector(".caption1-top img");
+  const activeCaptionimg = captions[currentIndex].querySelector(".caption1-top img");
+  const activeCaptionTitle = captions[currentIndex].querySelector(".caption1-title");
+  const activeCaptionDesc = captions[currentIndex].querySelector(".caption1-desc");
   const activeCaptionHr = captions[currentIndex].querySelector(".caption1 hr");
-  if (activeCaption) {
-    activeCaption.style.display = "block";
+  let activeCaptionMbTitle = document.querySelector(".captions1-mb__title");
+  let activeCaptionMbDesc = document.querySelector(".captions1-mb__desc");
+
+
+  if (activeCaptionimg) {
+    activeCaptionimg.style.display = "block";
   }
   if (activeCaptionHr) {
     activeCaptionHr.style.backgroundColor = "#6e1013";
   }
+  activeCaptionMbTitle.innerHTML = activeCaptionTitle.textContent;
+  activeCaptionMbDesc.innerHTML = activeCaptionDesc.textContent;
+
+
 }
 
 function startCarousel() {
@@ -99,6 +113,14 @@ captions.forEach((caption, index) => {
   });
 });
 
+captionsMb.forEach((caption, index) => {
+  caption.addEventListener("mouseover", () => {
+    showSlide(index);
+  });
+  caption.addEventListener("click", () => {
+    showSlide(index);
+  });
+});
 // Initialize the carousel
 showSlide(currentIndex);
 startCarousel();
