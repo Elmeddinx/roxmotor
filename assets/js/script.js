@@ -52,10 +52,9 @@ function createCarousel(carouselId, itemClass, captionClass, captionMbClass, cap
     const captions3Mb = document.getElementById("captions3Mb");
     const captions4Mb = document.getElementById("captions4Mb");
     
-    document.getElementById("carousel3").style.display = "none";
-    document.getElementById("carousel4").style.display = "none";
     
     if (carousel == document.getElementById("carousel3") && captions3Mb && window.innerWidth <= 768) {
+        document.getElementById("carousel3").style.display = "none";
         slides.forEach((slide, index) => {
             console.log(slide)
             const newItem = document.createElement('div');
@@ -76,6 +75,7 @@ function createCarousel(carouselId, itemClass, captionClass, captionMbClass, cap
     }
         
     if (carousel == document.getElementById("carousel4") && captions4Mb && window.innerWidth <= 768) {
+        document.getElementById("carousel4").style.display = "none";
         slides.forEach((slide, index) => {
             console.log(slide)
             const newItem = document.createElement('div');
