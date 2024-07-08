@@ -67,7 +67,6 @@
             width: 100%;
             height: 100%;
 
-
             .#{$carousel-class}-inner {
                 position: relative;
                 width: 100%;
@@ -202,9 +201,23 @@
                     &__top {
                         min-height: 150px;
                     }
-
+                    &__subtitle {
+                        line-height: 30px;
+                        font-size: 24px;
+                        font-weight: 600;
+                        display: block;
+                        text-align: left;
+                        padding-bottom: 20px;
+                        font-family: TT;
+                    }
+                    &__divider {
+                        background-color: rgb(110, 16, 19);
+                        width: 50px;
+                        padding: 1px 0;
+                        display: block;
+                        margin-bottom: 20px;
+                    }
                     &__title {
-                        height: 30px;
                         line-height: 30px;
                         font-size: 24px;
                         font-weight: 600;

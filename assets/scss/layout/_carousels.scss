@@ -3,6 +3,7 @@
 @include section-carousel("section4", "carousel3", "carousel3-item", "captions3", "caption3", "captions3-mb");
 @include section-carousel("section5", "carousel4", "carousel4-item", "captions4", "caption4", "captions4-mb");
 @include section-carousel("section7", "carousel5", "carousel5-item", "captions5", "caption5", "captions5-mb");
+@include section-carousel("section10", "carousel6", "carousel6-item", "captions6", "caption6", "captions6-mb");
 
 .section4 {
   height: 64vw !important;
@@ -73,5 +74,19 @@
     width: 100%;
     object-fit: cover;
     border-radius: 5px;
+  }
+}
+@include mq(tablet-portrait-up) {
+  .section10 {
+    height: 190vw;
+    .carousel6-inner {
+      height: 80vw !important;
+    }
+    .captions6-mb {
+      height: fit-content;
+    }
+    .captions6-mb__top {
+      min-height: 340px !important;
+    }
   }
 }
