@@ -39,7 +39,6 @@ player.on("fullscreenchange", function () {
     }
 });
 
-// Section1
 function createCarousel(carouselId, itemClass, captionClass, captionMbClass, captionTitleClass, captionDescClass, captionHrClass, mbTitleClass, mbDescClass) {
     let currentIndex = 0;
     let intervalId;
@@ -49,50 +48,34 @@ function createCarousel(carouselId, itemClass, captionClass, captionMbClass, cap
     const captionsMb = carousel.querySelectorAll(`.${captionMbClass}`);
     const activeCaptionMbTitle = carousel.querySelector(`.${mbTitleClass}`);
     const activeCaptionMbDesc = carousel.querySelector(`.${mbDescClass}`);
-    const captions3Mb = document.getElementById("captions3Mb");
-    const captions4Mb = document.getElementById("captions4Mb");
-    
-    
-    if (carousel == document.getElementById("carousel3") && captions3Mb && window.innerWidth <= 768) {
-        document.getElementById("carousel3").style.display = "none";
-        slides.forEach((slide, index) => {
-            console.log(slide)
-            const newItem = document.createElement('div');
-            newItem.classList.add(captionMbClass); 
 
-            const titleElement = document.createElement('h4');
-            titleElement.classList.add(mbTitleClass);
-            titleElement.innerHTML = captions[index].querySelector(`.${captionTitleClass}`).innerHTML;
-            newItem.appendChild(titleElement);
+    function handleCarouselItems() {
+        let captionsMbContainer;
+        if (carouselId === "carousel3") {
+            captionsMbContainer = document.getElementById("captions3Mb");
+        } else if (carouselId === "carousel4") {
+            captionsMbContainer = document.getElementById("captions4Mb");
+        }
 
-            let mediaElement = slide.querySelector('img') || slide.querySelector('video');
-            if (mediaElement) {
-                let clonedMediaElement = mediaElement.cloneNode(true);
-                newItem.appendChild(clonedMediaElement);
-            }    
-            captions3Mb.appendChild(newItem);
-        });
-    }
-        
-    if (carousel == document.getElementById("carousel4") && captions4Mb && window.innerWidth <= 768) {
-        document.getElementById("carousel4").style.display = "none";
-        slides.forEach((slide, index) => {
-            console.log(slide)
-            const newItem = document.createElement('div');
-            newItem.classList.add(captionMbClass); 
+        if (carousel && captionsMbContainer && window.innerWidth <= 768) {
+            carousel.style.display = "none";
+            slides.forEach((slide, index) => {
+                const newItem = document.createElement('div');
+                newItem.classList.add(captionMbClass);
 
-            const titleElement = document.createElement('h4');
-            titleElement.classList.add(mbTitleClass);
-            titleElement.innerHTML = captions[index].querySelector(`.${captionTitleClass}`).innerHTML;
-            newItem.appendChild(titleElement);
+                const titleElement = document.createElement('h4');
+                titleElement.classList.add(mbTitleClass);
+                titleElement.innerHTML = captions[index].querySelector(`.${captionTitleClass}`).innerHTML;
+                newItem.appendChild(titleElement);
 
-            let mediaElement = slide.querySelector('img') || slide.querySelector('video');
-            if (mediaElement) {
-                let clonedMediaElement = mediaElement.cloneNode(true);
-                newItem.appendChild(clonedMediaElement);
-            }    
-            captions3Mb.appendChild(newItem);
-        });
+                let mediaElement = slide.querySelector('img') || slide.querySelector('video');
+                if (mediaElement) {
+                    let clonedMediaElement = mediaElement.cloneNode(true);
+                    newItem.appendChild(clonedMediaElement);
+                }
+                captionsMbContainer.appendChild(newItem);
+            });
+        }
     }
 
     function showSlide(index) {
@@ -130,7 +113,6 @@ function createCarousel(carouselId, itemClass, captionClass, captionMbClass, cap
         const activeCaptionTitle = captions[currentIndex].querySelector(`.${captionTitleClass}`);
         const activeCaptionDesc = captions[currentIndex].querySelector(`.${captionDescClass}`);
         const activeCaptionHr = captions[currentIndex].querySelector(`.${captionHrClass}`);
-        let captions3Mb = document.getElementById("captions3Mb");
 
         if (activeCaptionImg) {
             activeCaptionImg.style.display = "block";
@@ -183,10 +165,11 @@ function createCarousel(carouselId, itemClass, captionClass, captionMbClass, cap
         });
     });
 
-    
+    handleCarouselItems();
     showSlide(currentIndex);
     startCarousel();
 }
+
 
 createCarousel('carousel1', 'carousel1-item', 'caption1', 'captions1-mb__pagination-item', 'caption1-title', 'caption1-desc', 'caption1 hr', 'captions1-mb__title', 'captions1-mb__desc');
 createCarousel('carousel2', 'carousel2-item', 'caption2', 'captions2-mb__pagination-item', 'caption2-title', 'caption2-desc', 'caption2 hr', 'captions2-mb__title', 'captions2-mb__desc');
