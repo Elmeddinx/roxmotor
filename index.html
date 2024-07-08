@@ -54,10 +54,10 @@
     <div class="hero">
         <div class="hero-container">
             <div class="hero__bg">
-                <video loop muted="muted" autoplay id="heroBgVideo">
+                <video loop muted="muted" autoplay id="heroBgVideo" playsinline="playsinline">
                     <source src="./assets/video/heroVideo.mp4">
                 </video>
-                <video id="heroVideoPlayer" class="video-js vjs-default-skin" controls preload="auto">
+                <video id="heroVideoPlayer" class="video-js vjs-default-skin" controls playsinline="playsinline" preload="auto">
                     <source src="./assets/video/heroVideo.mp4" type="video/mp4">
                 </video>
             </div>
@@ -250,7 +250,7 @@
         <div class="carousel3" id="carousel3">
             <div class="carousel3-inner">
                 <div class="carousel3-item active">
-                    <video src="./assets/video/slider3_1.mp4" autoplay muted="muted" loop></video>
+                    <video src="./assets/video/slider3_1.mp4" autoplay muted="muted" loop playsinline="playsinline"></video>
                 </div>
                 <div class="carousel3-item">
                     <img src="./assets/img/slider3_2.jpg" alt="Slide 2">
@@ -310,10 +310,10 @@
         <div class="carousel4" id="carousel4">
             <div class="carousel4-inner">
                 <div class="carousel4-item active">
-                    <video src="./assets/video/slider4_1.mp4" autoplay muted="muted" loop></video>
+                    <video src="./assets/video/slider4_1.mp4" autoplay muted="muted" loop playsinline="playsinline"></video>
                 </div>
                 <div class="carousel4-item">
-                    <video src="./assets/video/slider4_2.mp4" autoplay muted="muted" loop></video>
+                    <video src="./assets/video/slider4_2.mp4" autoplay muted="muted" loop playsinline="playsinline"></video>
                 </div>
             </div>
             <div class="captions4">
@@ -347,7 +347,7 @@
     <section class="section6">
         <div class="container">
             <div class="section6-bg">
-                <video src="./assets/video/section6.mp4" autoplay muted="muted" loop></video>
+                <video src="./assets/video/section6.mp4" autoplay muted="muted" loop playsinline="playsinline"></video>
             </div>
             <div class="section6-overlay">
                 <div class="section6-overlay__inner">
@@ -427,11 +427,26 @@
                 </div>
             </div>
             <div class="section8-bg">
-                <video src="./assets/video/section8.mp4" autoplay muted="muted" loop></video>
+                <video src="./assets/video/section8.mp4" autoplay muted="muted" loop playsinline="playsinline"></video>
             </div>
         </div>
     </section>
 
+    <section class="section9">
+        <div class="container">
+            <div class="section8-overlay">
+                <div class="section8-overlay__inner">
+                    <p class="section8-overlay__inner-title">
+                        Standard luggage rack with optional official loading frame to accommodate an additional 75 kg of luggage <br>
+                        Legal towing qualification*, maximum towing mass 750 kg</p>
+                    <div class="section8-overlay__inner-divider"></div>                                     
+                </div>
+            </div>
+            <div class="section8-bg">
+                <img src="./assets/img/section9.jpg"></img>
+            </div>
+        </div>
+    </section>
 
     <script src="https://vjs.zencdn.net/8.12.0/video.min.js"></script>
     <script src="./assets/js/script.js"></script>
