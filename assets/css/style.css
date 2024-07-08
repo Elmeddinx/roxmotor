@@ -401,6 +401,11 @@ body {
 }
 @media only screen and (max-width: 480px) {
   .section1 .carousel1 .captions1 {
+    height: 34%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .section1 .carousel1 .captions1 {
     height: 45%;
   }
 }
@@ -610,6 +615,11 @@ body {
   }
 }
 @media only screen and (max-width: 480px) {
+  .section3 .carousel2 .captions2 {
+    height: 34%;
+  }
+}
+@media only screen and (max-width: 380px) {
   .section3 .carousel2 .captions2 {
     height: 45%;
   }
@@ -821,6 +831,11 @@ body {
 }
 @media only screen and (max-width: 480px) {
   .section4 .carousel3 .captions3 {
+    height: 34%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .section4 .carousel3 .captions3 {
     height: 45%;
   }
 }
@@ -1030,6 +1045,11 @@ body {
   }
 }
 @media only screen and (max-width: 480px) {
+  .section5 .carousel4 .captions4 {
+    height: 34%;
+  }
+}
+@media only screen and (max-width: 380px) {
   .section5 .carousel4 .captions4 {
     height: 45%;
   }
@@ -1241,6 +1261,11 @@ body {
 }
 @media only screen and (max-width: 480px) {
   .section7 .carousel5 .captions5 {
+    height: 34%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .section7 .carousel5 .captions5 {
     height: 45%;
   }
 }
@@ -1450,6 +1475,11 @@ body {
   }
 }
 @media only screen and (max-width: 480px) {
+  .section10 .carousel6 .captions6 {
+    height: 34%;
+  }
+}
+@media only screen and (max-width: 380px) {
   .section10 .carousel6 .captions6 {
     height: 45%;
   }
@@ -1661,6 +1691,11 @@ body {
 }
 @media only screen and (max-width: 480px) {
   .section11 .carousel7 .captions7 {
+    height: 34%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .section11 .carousel7 .captions7 {
     height: 45%;
   }
 }
@@ -1870,6 +1905,11 @@ body {
   }
 }
 @media only screen and (max-width: 480px) {
+  .section12 .carousel8 .captions8 {
+    height: 34%;
+  }
+}
+@media only screen and (max-width: 380px) {
   .section12 .carousel8 .captions8 {
     height: 45%;
   }
@@ -2081,6 +2121,11 @@ body {
 }
 @media only screen and (max-width: 480px) {
   .section13 .carousel9 .captions9 {
+    height: 34%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .section13 .carousel9 .captions9 {
     height: 45%;
   }
 }
@@ -2291,6 +2336,11 @@ body {
 }
 @media only screen and (max-width: 480px) {
   .section15 .carousel10 .captions10 {
+    height: 34%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .section15 .carousel10 .captions10 {
     height: 45%;
   }
 }
@@ -2500,6 +2550,11 @@ body {
   }
 }
 @media only screen and (max-width: 480px) {
+  .section16 .carousel11 .captions11 {
+    height: 34%;
+  }
+}
+@media only screen and (max-width: 380px) {
   .section16 .carousel11 .captions11 {
     height: 45%;
   }
@@ -2741,9 +2796,19 @@ body {
     min-height: 250px !important;
   }
 }
+@media only screen and (max-width: 768px) and (max-width: 480px) {
+  .section10 .captions6-mb__top {
+    height: 270px !important;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .section10 {
+    height: 180vw !important;
+  }
+}
 @media only screen and (max-width: 380px) {
   .section10 {
-    height: 230vw !important;
+    height: 240vw !important;
   }
   .section10 .captions6-mb__top {
     min-height: 320px !important;
@@ -2758,11 +2823,52 @@ body {
     height: 145vw;
   }
 }
+@media only screen and (max-width: 480px) {
+  .section11 {
+    height: 180vw !important;
+  }
+  .section11 .carousel7 .captions7 {
+    height: 40%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .section11 {
+    height: 210vw !important;
+  }
+  .section11 .carousel7 .captions7 {
+    height: 45%;
+  }
+}
 
 .section13 .carousel9-item video {
   height: 100%;
 }
 
+@media only screen and (max-width: 380px) {
+  .section15 {
+    height: 210vw !important;
+  }
+  .section15 .carousel7 .captions7 {
+    height: 45%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .section16 {
+    height: 180vw;
+  }
+  .section16 .carousel11 .captions11 {
+    height: 40%;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .section16 {
+    height: 200vw !important;
+  }
+  .section16 .carousel11 .captions11 {
+    height: 45%;
+  }
+}
 .section16 .caption11-top {
   height: 6.2vw;
 }
@@ -2936,6 +3042,11 @@ body {
   .section6 {
     margin-top: 30px;
     height: 130vw;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .section6 {
+    height: 146vw;
   }
 }
 @media only screen and (max-width: 380px) {

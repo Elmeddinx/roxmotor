@@ -94,11 +94,17 @@
     }
     .captions6-mb__top {
       min-height: 250px !important;
+      @include mq(phone-only) {
+        height: 270px !important;
+      }
     }
   }
+  @include mq(phone-only) {
+    height: 180vw !important;
+  }
   @include mq(phone-sm) {
-    height: 230vw !important;
-    
+    height: 240vw !important;
+
     .captions6-mb__top {
       min-height: 320px !important;
     }
@@ -108,6 +114,22 @@
   height: 56vw;
   @include mq(tablet-portrait-up) {
     height: 145vw;
+  }
+  @include mq(phone-only) {
+    height: 180vw !important;
+    .carousel7 {
+      .captions7 {
+        height: 40%;
+      }
+    }
+  }
+  @include mq(phone-sm) {
+    height: 210vw !important;
+    .carousel7 {
+      .captions7 {
+        height: 45%;
+      }
+    }
   }
 }
 .section13 {
@@ -119,7 +141,34 @@
     }
   }
 }
+
+.section15 {
+  @include mq(phone-sm) {
+    height: 210vw !important;
+    .carousel7 {
+      .captions7 {
+        height: 45%;
+      }
+    }
+  }
+}
 .section16 {
+  @include mq(phone-only) {
+    height: 180vw;
+    .carousel11 {
+      .captions11 {
+        height: 40%;
+      }
+    }
+  }
+  @include mq(phone-sm) {
+    height: 200vw !important;
+    .carousel11 {
+      .captions11 {
+        height: 45%;
+      }
+    }
+  }
   .caption11-top {
     height: 6.2vw;
   }

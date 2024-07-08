@@ -120,6 +120,9 @@
                 }
 
                 @include mq(phone-only) {
+                    height: 34%;
+                }
+                @include mq(phone-sm) {
                     height: 45%;
                 }
 
