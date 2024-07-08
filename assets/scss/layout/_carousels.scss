@@ -7,6 +7,8 @@
 @include section-carousel("section11", "carousel7", "carousel7-item", "captions7", "caption7", "captions7-mb");
 @include section-carousel("section12", "carousel8", "carousel8-item", "captions8", "caption8", "captions8-mb");
 @include section-carousel("section13", "carousel9", "carousel9-item", "captions9", "caption9", "captions9-mb");
+@include section-carousel("section15", "carousel10", "carousel10-item", "captions10", "caption10", "captions10-mb");
+@include section-carousel("section16", "carousel11", "carousel11-item", "captions11", "caption11", "captions11-mb");
 
 .section4 {
   height: 64vw !important;
@@ -59,7 +61,8 @@
   /* Eğer bazı tarayıcılarda desteklemiyorsa, -webkit- ile */
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.98) 50%, rgba(0, 0, 0, 0) 100%);
 }
-.captions3-mb, .captions4-mb {
+.captions3-mb,
+.captions4-mb {
   background-color: #fff;
   &__item {
     margin-top: 60px;
@@ -80,8 +83,8 @@
     border-radius: 5px;
   }
 }
-@include mq(tablet-portrait-up) {
-  .section10 {
+.section10 {
+  @include mq(tablet-portrait-up) {
     height: 140vw;
     .carousel6-inner {
       height: 80vw !important;
@@ -91,6 +94,13 @@
     }
     .captions6-mb__top {
       min-height: 250px !important;
+    }
+  }
+  @include mq(phone-sm) {
+    height: 230vw !important;
+    
+    .captions6-mb__top {
+      min-height: 320px !important;
     }
   }
 }
@@ -107,5 +117,10 @@
         height: 100%;
       }
     }
+  }
+}
+.section16 {
+  .caption11-top {
+    height: 6.2vw;
   }
 }
