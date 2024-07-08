@@ -175,3 +175,4 @@ createCarousel('carousel1', 'carousel1-item', 'caption1', 'captions1-mb__paginat
 createCarousel('carousel2', 'carousel2-item', 'caption2', 'captions2-mb__pagination-item', 'caption2-title', 'caption2-desc', 'caption2 hr', 'captions2-mb__title', 'captions2-mb__desc');
 createCarousel('carousel3', 'carousel3-item', 'caption3', 'captions3-mb__item', 'caption3-title', 'caption3-desc', 'caption3 hr', 'captions3-mb__title', 'captions3-mb__desc');
 createCarousel('carousel4', 'carousel4-item', 'caption4', 'captions4-mb__item', 'caption4-title', 'caption4-desc', 'caption4 hr', 'captions4-mb__title', 'captions4-mb__desc');
+createCarousel('carousel5', 'carousel5-item', 'caption5', 'captions5-mb__pagination-item', 'caption5-title', 'caption5-desc', 'caption5 hr', 'captions5-mb__title', 'captions5-mb__desc');

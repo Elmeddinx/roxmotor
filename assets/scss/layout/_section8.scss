@@ -1,0 +1,74 @@
+.section8 {
+    width: 100%;
+    height: 56.25vw;
+    @include mq(tablet-portrait-up) {
+        margin-top: 30px;
+        height: 145vw;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    &-bg {
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        @include mq(tablet-portrait-up) {
+            height: 63.7vw;
+            width: 90%;
+            margin: 0 auto;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &-overlay {
+        position: absolute;
+        bottom: 80px;
+        left: 0;
+        width: 100%;
+
+        @include mq(tablet-portrait-up) {
+            position: relative;
+            bottom: 0;
+            margin-top: 45px;
+            margin-bottom: 90px;
+        }
+        &__inner {
+            width: 90%;
+            margin: 0 auto;
+            &-title {
+                font-size: 1.2vw;
+                line-height: 1.4;
+                font-weight: 400;
+                color: #fff;
+                margin-bottom: 10px;
+
+                @include mq(tablet-portrait-up) {
+                    text-align: left;
+                    line-height: 24px;
+                    font-size: 20px;
+                    font-weight: 400;
+                    display: block;
+                    color: #000;
+                }
+                @include mq(phone-sm) {
+                    height: 65px;
+                    line-height: 25px;
+                    font-size: 21px;
+                }
+            }
+            &-divider {
+                background-color: #6e1013;
+                width: 50px;
+                height: 2px;
+                @include mq(tablet-portrait-up) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
