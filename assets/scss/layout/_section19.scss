@@ -1,0 +1,89 @@
+.section19 {
+    width: 100%;
+    height: 57vw;
+    @include mq(tablet-portrait-up) {
+        height: 84vw;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-image: url("../img/section19.jpg");
+        background-repeat: no-repeat;
+        object-fit: cover;
+        background-position: 50%;
+        background-size: cover;
+        position: relative;
+    }
+    &-bg {
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        @include mq(tablet-portrait-up) {
+            height: 84vw;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @include mq(tablet-portrait-down) {
+            display: none;
+        }
+    }
+    &-overlay {
+        position: absolute;
+        top: 5%;
+        left: 0;
+        width: 100%;
+
+        @include mq(tablet-portrait-up) {
+            top: 40px;
+        }
+        &__inner {
+            width: 90%;
+            margin: 0 auto;
+            @include mq(tablet-portrait-up) {
+
+            }
+            &-title {
+                font-family: TT;
+                font-size: 34px;
+                color: #fff;
+                margin-bottom: 10px;
+                text-align: center;
+
+                @include mq(tablet-portrait-up) {
+                    font-size: 20px;
+                    line-height: 26px;
+                    font-weight: 600;
+                    display: block;
+                }
+                @include mq(phone-sm) {
+                    line-height: 23px;
+                    font-size: 18px;
+                }
+            }
+            &-divider {
+                background-color: #6e1013;
+                width: 50px;
+                height: 2px;
+            }
+            &-desc {
+                width: 100%;
+                font-size: 0.9375vw;
+                line-height: 1.3;
+                padding-top: 10px;
+                color: #fff;
+                @include mq(tablet-portrait-up) {
+                    text-align: left;
+                    height: auto;
+                    line-height: 24px;
+                    font-size: 16px;
+                    display: block;
+                    color: #000;
+                }
+            }
+        }
+    }
+}
