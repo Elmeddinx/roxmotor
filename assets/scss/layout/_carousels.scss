@@ -4,6 +4,9 @@
 @include section-carousel("section5", "carousel4", "carousel4-item", "captions4", "caption4", "captions4-mb");
 @include section-carousel("section7", "carousel5", "carousel5-item", "captions5", "caption5", "captions5-mb");
 @include section-carousel("section10", "carousel6", "carousel6-item", "captions6", "caption6", "captions6-mb");
+@include section-carousel("section11", "carousel7", "carousel7-item", "captions7", "caption7", "captions7-mb");
+@include section-carousel("section12", "carousel8", "carousel8-item", "captions8", "caption8", "captions8-mb");
+@include section-carousel("section13", "carousel9", "carousel9-item", "captions9", "caption9", "captions9-mb");
 
 .section4 {
   height: 64vw !important;
@@ -36,6 +39,7 @@
     padding: 0 15px;
   }
 }
+
 .captions3,
 .captions4 {
   align-items: flex-end;
@@ -78,7 +82,7 @@
 }
 @include mq(tablet-portrait-up) {
   .section10 {
-    height: 190vw;
+    height: 140vw;
     .carousel6-inner {
       height: 80vw !important;
     }
@@ -86,7 +90,22 @@
       height: fit-content;
     }
     .captions6-mb__top {
-      min-height: 340px !important;
+      min-height: 250px !important;
+    }
+  }
+}
+.section11 {
+  height: 56vw;
+  @include mq(tablet-portrait-up) {
+    height: 145vw;
+  }
+}
+.section13 {
+  .carousel9 {
+    &-item {
+      video {
+        height: 100%;
+      }
     }
   }
 }
