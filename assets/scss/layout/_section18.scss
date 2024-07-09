@@ -28,6 +28,9 @@
         left: 0;
         width: 100%;
 
+        @include mq(big-desktop-up) {
+            bottom: 130px;
+        }
         @include mq(tablet-portrait-up) {
             position: relative;
             bottom: 0;

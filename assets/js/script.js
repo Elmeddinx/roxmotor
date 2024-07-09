@@ -1,5 +1,7 @@
 var headerLang = document.getElementById("headerLang");
 var headerLangDropdown = document.querySelector("#headerLangDropdown");
+var footerLang = document.getElementById("footerLang");
+var footerLangDropdown = document.querySelector("#footerLangDropdown");
 var hamburgerMenuBtn = document.getElementById("hamburgerMenuBtn");
 var hamburgerMenu = document.getElementById("hamburgerMenu");
 var player = videojs("heroVideoPlayer");
@@ -16,6 +18,18 @@ document.addEventListener("click", (e) => {
         !headerLangDropdown.contains(e.target)
     ) {
         headerLangDropdown.classList.remove("activeLang");
+    }
+});
+footerLang.addEventListener("click", (e) => {
+    footerLangDropdown.classList.toggle("activeLang");
+});
+
+document.addEventListener("click", (e) => {
+    if (
+        !footerLang.contains(e.target) &&
+        !footerLangDropdown.contains(e.target)
+    ) {
+        footerLangDropdown.classList.remove("activeLang");
     }
 });
 

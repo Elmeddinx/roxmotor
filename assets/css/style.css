@@ -29,12 +29,20 @@ body {
 .footer {
   width: 100%;
   min-height: 344px;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #000;
+}
+.footer .container {
+  width: 100%;
+  height: 100%;
+  padding: 0 5%;
   background-color: #000;
 }
 .footer-top {
   width: 100%;
+  padding: 30px 0;
   background-color: #000;
-  padding: 30px 5%;
 }
 .footer-top__logo {
   width: 111px;
@@ -42,6 +50,193 @@ body {
 .footer-top__logo img {
   width: 100%;
 }
+.footer-mid {
+  width: 100%;
+  min-height: 170px;
+}
+.footer-mid__menu {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  padding: 25px 0;
+}
+.footer-mid__menu-item {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 1vw;
+}
+.footer-mid__menu-item a {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 500;
+}
+@media only screen and (max-width: 768px) {
+  .footer-mid__menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.footer-mid__lang {
+  position: relative;
+  list-style: none;
+  text-align: center;
+  padding: 0 1vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.footer-mid__lang p {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+.footer-mid__lang p img {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+}
+.footer-mid__lang-item {
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  border-radius: 4px;
+  padding: 10px 0;
+  background-color: #fff;
+}
+.footer-mid__lang-item li {
+  list-style: none;
+  line-height: 34px;
+  color: #000;
+  padding: 0 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.footer-mid__lang-item li:hover {
+  background-color: #ecf5ff;
+  color: #66b1ff;
+}
+@media only screen and (max-width: 768px) {
+  .footer-mid__lang-item li:hover {
+    background-color: unset;
+    color: #000;
+  }
+}
+.footer-mid__lang .activeLang {
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  .footer-mid__lang {
+    line-height: 64px;
+  }
+  .footer-mid__lang-items {
+    display: flex;
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: unset;
+    width: 100%;
+  }
+  .footer-mid__lang-items li {
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 64px;
+  }
+}
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #50555b;
+}
+.footer-bottom {
+  width: 100%;
+}
+.footer-bottom__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+@media only screen and (max-width: 768px) {
+  .footer-bottom__container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.footer-bottom__menu {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+@media only screen and (max-width: 768px) {
+  .footer-bottom__menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.footer-bottom__menu-item {
+  list-style: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .footer-bottom__menu-item:nth-child(1) {
+    padding: 20px 0;
+  }
+  .footer-bottom__menu-item:nth-child(2) {
+    padding-bottom: 20px;
+  }
+}
+.footer-bottom__menu-item a {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+}
+@media only screen and (max-width: 768px) {
+  .footer-bottom__menu-item a {
+    font-size: 12px;
+  }
+}
+.footer-bottom__copyright {
+  color: #fff;
+  font-size: 14px;
+  line-height: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .footer-bottom__copyright {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+.footer-bottom__copyright a {
+  color: #fff;
+  font-size: 14px;
+  line-height: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .footer-bottom__copyright a {
+    font-size: 12px;
+  }
+}
+
 body {
   height: 1000vh;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
@@ -3549,6 +3744,11 @@ body {
   bottom: 80px;
   left: 0;
   width: 100%;
+}
+@media only screen and (min-width: 1440px) {
+  .section18-overlay {
+    bottom: 130px;
+  }
 }
 @media only screen and (max-width: 768px) {
   .section18-overlay {
