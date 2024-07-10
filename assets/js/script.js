@@ -1,12 +1,9 @@
-const currentPage = window.location.pathname;
-
 var headerLang = document.getElementById("headerLang");
 var headerLangDropdown = document.querySelector("#headerLangDropdown");
 var footerLang = document.getElementById("footerLang");
 var footerLangDropdown = document.querySelector("#footerLangDropdown");
 var hamburgerMenuBtn = document.getElementById("hamburgerMenuBtn");
 var hamburgerMenu = document.getElementById("hamburgerMenu");
-var isHomePage = document.getElementById("homePage");
 
 headerLang.addEventListener("click", (e) => {
   headerLangDropdown.classList.toggle("activeLang");
@@ -37,7 +34,7 @@ hamburgerMenuBtn.addEventListener("click", (e) => {
   hamburgerMenu.classList.toggle("activeMenu");
 });
 
-if (currentPage.includes("index.html")) {
+if (document.body.id === "homePage") {
   var heroBtn = document.getElementById("heroBtn");
 
   var heroBgVideo = document.getElementById("heroBgVideo");
@@ -60,6 +57,109 @@ if (currentPage.includes("index.html")) {
     }
   });
 }
+if (document.body.id === "tablePage") {
+  const sidebarItems = document.querySelectorAll(".sidebar-item");
+  const sections = document.querySelectorAll(".table-section");
+  const tableContainer = document.querySelector(".table-container");
+
+  function updateSidebar() {
+    let index = sections.length;
+
+    while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+    sidebarItems.forEach((item) => item.classList.remove("active"));
+    if (index >= 0) {
+      sidebarItems[index].classList.add("active");
+    }
+  }
+
+  function syncTableScroll() {
+    tableContainer.scrollTop = window.scrollY;
+  }
+
+  updateSidebar();
+  window.addEventListener("scroll", () => {
+    updateSidebar();
+    syncTableScroll();
+  });
+
+  sidebarItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const targetSection = document.getElementById(item.dataset.target);
+      window.scrollTo({
+        top: targetSection.offsetTop,
+        behavior: "smooth",
+      });
+    });
+  });
+
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+  const dropdownPopup = document.getElementById("dropdownPopup");
+  const dropdownItems = dropdownPopup.querySelectorAll("li");
+  const tableSections = document.querySelectorAll(".table-section");
+
+  function updateActiveDropdownItem() {
+    let activeIndex = -1;
+    tableSections.forEach((section, index) => {
+      if (window.scrollY >= section.offsetTop - window.innerHeight / 6) {
+        activeIndex = index;
+      }
+    });
+
+    dropdownItems.forEach((item, index) => {
+      item.classList.toggle("active", index === activeIndex);
+    });
+  }
+
+  dropdownToggles.forEach((toggle) => {
+    toggle.addEventListener("click", function () {
+      if (window.innerWidth <= 768) {
+        // Bir üst başlığa kaydır
+        const previousElement = toggle.closest("tbody").previousElementSibling;
+        const rect = this.getBoundingClientRect();
+        if (previousElement) {
+          window.scrollTo({
+            top: previousElement.offsetTop,
+            behavior: "smooth",
+          });
+        }
+
+        // Dropdown menüyü göster
+          console.log(rect)
+        dropdownPopup.style.top = `${rect.bottom + window.scrollY}px`;
+        dropdownPopup.style.left = `${rect.left}px`;
+        dropdownPopup.style.display = "block";
+
+        // Aktif dropdown öğesini güncelle
+        updateActiveDropdownItem();
+      }
+    });
+  });
+
+  dropdownItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const targetSection = document.getElementById(this.dataset.target);
+      window.scrollTo({
+        top: targetSection.offsetTop,
+        behavior: "smooth",
+      });
+      dropdownPopup.style.display = "none";
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    if (
+      !dropdownPopup.contains(event.target) &&
+      !event.target.classList.contains("dropdown-toggle")
+    ) {
+      dropdownPopup.style.display = "none";
+    }
+  });
+
+  window.addEventListener("scroll", updateActiveDropdownItem);
+  updateActiveDropdownItem();
+}
+
 function createCarousel(
   carouselId,
   itemClass,
@@ -210,7 +310,7 @@ function createCarousel(
   startCarousel();
 }
 
-if (currentPage.includes("index.html")) {
+if (document.body.id === "homePage") {
   createCarousel(
     "carousel1",
     "carousel1-item",
