@@ -4718,6 +4718,6 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .table .container .content .table-container .dropdown-popup {
-    display: block;
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

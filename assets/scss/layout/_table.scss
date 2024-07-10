@@ -214,7 +214,7 @@
 
                 @include mq(tablet-portrait-up) {
                     .dropdown-popup {
-                        display: block;
+                        display: none;
                     }
                 }
             }
