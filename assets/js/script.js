@@ -114,7 +114,6 @@ if (document.body.id === "tablePage") {
   dropdownToggles.forEach((toggle) => {
     toggle.addEventListener("click", function () {
       if (window.innerWidth <= 768) {
-        // Bir üst başlığa kaydır
         const previousElement = toggle.closest("tbody").previousElementSibling;
         const rect = this.getBoundingClientRect();
         if (previousElement) {
@@ -124,13 +123,9 @@ if (document.body.id === "tablePage") {
           });
         }
 
-        // Dropdown menüyü göster
-          console.log(rect)
-        dropdownPopup.style.top = `${rect.bottom + window.scrollY}px`;
+        dropdownPopup.style.top = `${rect.bottom + window.scrollY}px `;
         dropdownPopup.style.left = `${rect.left}px`;
         dropdownPopup.style.display = "block";
-
-        // Aktif dropdown öğesini güncelle
         updateActiveDropdownItem();
       }
     });

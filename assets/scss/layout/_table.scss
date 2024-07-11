@@ -112,7 +112,7 @@
                     .thead {
                         width: 100%;
                         position: sticky;
-                        top: 68px;
+                        top: 62px;
                         padding: 24px 20px 24px 16px;
                         background-color: white;
                         z-index: 2;
@@ -122,7 +122,9 @@
                         tr {
                             border-top: 1px solid #eee;
                         }
-
+                        td {
+                            width: 33.333%;
+                        }
                         @include mq(tablet-portrait-up) {
                             font-size: 16px;
                             line-height: 1.2;
@@ -139,16 +141,65 @@
                             font-size: 20px;
                             line-height: 1.5;
                             word-break: break-word;
+
                             @include mq(tablet-portrait-up) {
                                 font-size: 12px;
                                 line-height: 1.2;
+                            }
+                            .td-inner {
+                                display: flex;
+                                align-items: center;
+                                img {
+                                    width: 36px;
+                                    height: 36px;
+                                    margin-right: 10px;
+                                    @include mq(tablet-portrait-up) {
+                                        width: 30px;
+                                        height: 30px;
+                                        margin-right: 5px;
+                                    }
+                                }
+                                .td-icon {
+                                    width: 20px;
+                                    height: 30px;
+                                    font-size: 35px;
+                                    line-height: 1.5;
+                                    word-break: break-word;
+                                    color: #1a171b;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin-right: 5px;
+                                    font-family: TT, alibaba, AlibabaPuHuiTi-2-55-Regular;
+
+                                    @include mq(tablet-portrait-up) {
+                                        width: 12px;
+                                        height: 18px;
+                                        font-size: 20px;
+                                    }
+                                }
+                                &__cont {
+                                    display: flex;
+                                    flex-direction: column;
+                                    .td-desc {
+                                        font-size: 16px;
+                                        line-height: 1.5;
+
+                                        @include mq(tablet-portrait-up) {
+                                            font-size: 12px;
+                                        }
+                                    }
+                                }
+                                &.colspan2 {
+                                    justify-content: center;
+                                }
                             }
                         }
                     }
                     .table-section th {
                         position: sticky;
                         padding: 16px !important;
-                        top: 142px;
+                        top: 139px;
                         z-index: 1;
                         font-size: 24px;
                         font-weight: 700;
@@ -157,6 +208,10 @@
                         @include mq(tablet-portrait-up) {
                             font-size: 16px;
                             line-height: 1.2;
+                            top: 130px;
+                        }
+                        @include mq(phone-only) {
+                            top: 149px;
                         }
                     }
                     .dropdown-toggle {
