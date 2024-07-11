@@ -56,7 +56,31 @@ if (document.body.id === "homePage") {
       document.getElementById("heroVideoPlayer").style.display = "none";
     }
   });
+
+  const scrollToTopBtn = document.getElementById("scrollTopBtn");
+  const backTopBtns = document.getElementById("backTopBtns");
+  const mailboxbtn = document.getElementById("mailBoxBtn");
+  const mailbox = document.getElementById("mailbox");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 200) {
+      backTopBtns.classList.add("show");
+    } else {
+      backTopBtns.classList.remove("show");
+    }
+  });
+
+  mailboxbtn.addEventListener("click", function () {
+    mailbox.classList.toggle("show");
+  });
+  scrollToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 }
+
 if (document.body.id === "tablePage") {
   const sidebarItems = document.querySelectorAll(".sidebar-item");
   const sections = document.querySelectorAll(".table-section");

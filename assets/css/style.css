@@ -26,6 +26,110 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
 }
 
+.backtop {
+  position: fixed;
+  z-index: 9999;
+  bottom: 200px;
+  right: 5%;
+  display: none;
+}
+.backtop .scrolltop {
+  display: block;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #dcdfe6;
+  box-sizing: border-box;
+  transition: 0.1s;
+  border-radius: 4px;
+  width: 44px;
+  height: 44px;
+  transition: 0.1s;
+}
+.backtop .scrolltop:hover {
+  background-color: #6e1013 !important;
+  border-color: #6e1013 !important;
+}
+.backtop .scrolltop:hover img {
+  content: url("../icons/scrolltophover.png");
+}
+.backtop .scrolltop img {
+  width: 24px;
+  height: 24px;
+}
+@media only screen and (max-width: 768px) {
+  .backtop .scrolltop img {
+    width: 16px;
+    height: 16px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .backtop .scrolltop {
+    width: 28px;
+    height: 28px;
+  }
+}
+.backtop .mailboxbtn {
+  display: block;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #dcdfe6;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .backtop .mailboxbtn {
+    width: 28px;
+    height: 28px;
+  }
+}
+.backtop .mailboxbtn img {
+  width: 24px;
+  height: 24px;
+}
+@media only screen and (max-width: 768px) {
+  .backtop .mailboxbtn img {
+    width: 16px;
+    height: 16px;
+  }
+}
+.backtop .mailbox {
+  font-size: 18px;
+  text-align: center;
+  height: 42px;
+  background: #fff;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  position: absolute;
+  border: 1px solid #dcdfe6;
+  font-family: TT;
+  padding: 0 10px;
+  width: 250px;
+  line-height: 39px;
+  right: 42px;
+  bottom: 65px;
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .backtop .mailbox {
+    height: 26px;
+    line-height: 25px;
+    font-size: 14px;
+    right: 28px;
+    width: 200px;
+    bottom: 49px;
+  }
+}
+.backtop .mailbox.show {
+  display: block;
+}
+.backtop.show {
+  display: block;
+  opacity: 1;
+}
+
 .footer {
   width: 100%;
   min-height: 344px;
