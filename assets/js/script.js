@@ -4,7 +4,7 @@ var footerLang = document.getElementById("footerLang");
 var footerLangDropdown = document.querySelector("#footerLangDropdown");
 var hamburgerMenuBtn = document.getElementById("hamburgerMenuBtn");
 var hamburgerMenu = document.getElementById("hamburgerMenu");
-
+AOS.init();
 headerLang.addEventListener("click", (e) => {
   headerLangDropdown.classList.toggle("activeLang");
 });
