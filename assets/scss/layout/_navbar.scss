@@ -114,6 +114,7 @@ body {
             font-weight: 500;
             @include mq(tablet-portrait-up) {
                 padding: 0;
+                margin-right: 8px;
             }
         }
         &__lang {
