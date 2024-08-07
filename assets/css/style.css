@@ -556,6 +556,9 @@ body {
   height: 100%;
   position: relative;
 }
+.hero__bg {
+  display: flex;
+}
 .hero__bg video {
   -o-object-fit: contain;
      object-fit: contain;
